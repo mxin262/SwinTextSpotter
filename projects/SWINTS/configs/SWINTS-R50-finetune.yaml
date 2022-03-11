@@ -1,0 +1,17 @@
+_BASE_: "Base-SWINTS_r50.yaml"
+MODEL:
+  WEIGHTS: "./output/mixtrain/model_0089999.pth"
+  RESNETS:
+    DEPTH: 50
+    STRIDE_IN_1X1: False
+  SWINTS:
+    NUM_PROPOSALS: 300
+    NUM_CLASSES: 2
+DATASETS:
+  TRAIN: ("totaltext_train",)
+  TEST:  ("totaltext_test",)
+SOLVER:
+  STEPS: (6000,)
+  MAX_ITER: 10000
+INPUT:
+  FORMAT: "RGB"

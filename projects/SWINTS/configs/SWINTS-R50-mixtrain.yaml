@@ -1,0 +1,18 @@
+_BASE_: "Base-SWINTS_r50.yaml"
+MODEL:
+  WEIGHTS: "./output/prain/model_0449999.pth"
+  RESNETS:
+    DEPTH: 50
+    STRIDE_IN_1X1: False
+  SWINTS:
+    NUM_PROPOSALS: 300
+    NUM_CLASSES: 2
+DATASETS:
+  TRAIN: ("totaltext_train","icdar_2013_train","icdar_2017_validation_mlt","icdar_2017_mlt",)
+  TEST:  ("totaltext_tset",)
+  # TEST:  ("coco_2017_test-dev",)
+SOLVER:
+  STEPS: (60000,)
+  MAX_ITER: 80000
+INPUT:
+  FORMAT: "RGB"

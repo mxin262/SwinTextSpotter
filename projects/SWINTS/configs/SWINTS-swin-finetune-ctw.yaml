@@ -1,0 +1,19 @@
+_BASE_: "Base-SWINTS_swin.yaml"
+MODEL:
+  WEIGHTS: "swin_imagenet_pretrain.pth"
+  SWINTS:
+    NUM_PROPOSALS: 300
+    NUM_CLASSES: 2
+  REC_HEAD:
+      POOLER_RESOLUTION: (16,48)
+      RESOLUTION: (32, 96)
+      BATCH_SIZE: 128
+DATASETS:
+  TRAIN: ("ctw1500_train",)
+  TEST:  ("ctw1500_test",)
+SOLVER:
+  STEPS: (30000,)
+  MAX_ITER: 50000
+  CHECKPOINT_PERIOD: 10000
+INPUT:
+  FORMAT: "RGB"
