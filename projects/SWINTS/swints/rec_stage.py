@@ -24,7 +24,7 @@ class DynamicConv_v2(nn.Module):
     def forward(self, pro_features, roi_features):
         '''
         pro_features: (1,  N * nr_boxes, self.d_model)
-        roi_features: (49, N * nr_boxes, self.d_model)
+        roi_features: (rec_resolution, N * nr_boxes, self.d_model)
         '''
         features = roi_features.permute(1, 0, 2)
         parameters = self.dynamic_layer(pro_features).permute(1, 0, 2)
