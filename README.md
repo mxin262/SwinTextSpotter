@@ -75,7 +75,7 @@ python demo/demo.py --config-file projects/SWINTS/configs/SWINTS-swin-finetune-t
 If our paper helps your research, please cite it in your publications:
 
 ```
-@inproceedings{luo2020learn,
+@inproceedings{huang2022swints,
   author = {Mingxin Huang and YuLiang liu and Zhenghao Peng and Chongyu Liu and Dahua Lin and Shenggao Zhu and Nicholas Yuan and Kai Ding and Lianwen Jin},
   title = {SwinTextSpotter: Scene Text Spotting via Better Synergy between Text Detection and Text Recognition},
   booktitle = {CVPR},
