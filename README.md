@@ -67,7 +67,6 @@ python projects/SWINTS/train_net.py --config-file projects/SWINTS/configs/SWINTS
 7. Visualize the detection and recognition results (e.g., with ResNet50 backbone)
 ```
 python demo/demo.py --config-file projects/SWINTS/configs/SWINTS-swin-finetune-totaltext.yaml --input input1.jpg --output ./output --confidence-threshold 0.4 --opts MODEL.WEIGHTS ./output/model_final.pth
-
 ```
 
 ## Citation
