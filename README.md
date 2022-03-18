@@ -24,6 +24,8 @@ pip install shapely
 pip install rapidfuzz
 pip install timm
 pip install Polygon3
+git clone https://github.com/mxin262/SwinTextSpotter.git
+cd SwinTextSpotter
 python setup.py build develop
 ```
 
