@@ -83,3 +83,9 @@ If our paper helps your research, please cite it in your publications:
   year = {2022}
 }
 ```
+
+# Copyright
+
+For commercial purpose usage, please contact Dr. Lianwen Jin: eelwjin@scut.edu.cn
+
+Copyright 2019, Deep Learning and Vision Computing Lab, South China China University of Technology. http://www.dlvc-lab.net
