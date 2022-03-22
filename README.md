@@ -39,7 +39,7 @@ datasets
 |  |_ train_images
 |  |_ annotations/train.json
 .......
-
+```
 Downloaded images
 - ICDAR2017-MLT [[image]](https://rrc.cvc.uab.es/?ch=8&com=downloads)
 - Syntext-150k: 
@@ -54,9 +54,6 @@ Downloaded images
 - SynChinese130k [[images&label]](https://drive.google.com/file/d/1w9BFDTfVgZvpLE003zM694E0we4OWmyP/view?usp=sharing)
 
 Downloaded label[Google Drive](https://drive.google.com/file/d/1wd_Z8UPNXRtnzU_qZCukKhxa_CDO5eaO/view?usp=sharing) [BaiduYun](https://pan.baidu.com/s/18GM7kwT-cuW01vDl4zutoQ) PW: a8gj
-
-```
-
 
 3. Pretrain SWINTS (e.g., with Swin-Transformer backbone)
 
