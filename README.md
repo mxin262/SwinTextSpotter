@@ -8,9 +8,9 @@ This is the pytorch implementation of Paper: SwinTextSpotter: Scene Text Spottin
 - We use the models pre-trained on ImageNet. The ImageNet pre-trained [SwinTransformer](https://drive.google.com/drive/u/1/folders/19UaSgR4OwqA-BhCs_wG7i6E-OXC5NR__) backbone is obtained from [SwinT_detectron2](https://github.com/xiaohu2015/SwinT_detectron2).
 
 ## Models
-[SWINTS-swin-Total-Text](https://github.com/mxin262/SwinTextSpotter/blob/main/projects/SWINTS/configs/SWINTS-swin-finetune-totaltext.yaml) [model_Google Drive](https://drive.google.com/file/d/1o6LbT0NayfIzTtJpozAqtz50wrSNnKIJ/view?usp=sharing) \| [model_BaiduYun](https://pan.baidu.com/s/1fLqMa9r-Ea2wIT6I81bwhA) PW: tf0i
+[SWINTS-swin-Total-Text](https://github.com/mxin262/SwinTextSpotter/blob/main/projects/SWINTS/configs/SWINTS-swin-finetune-totaltext.yaml) \| [model_Google Drive](https://drive.google.com/file/d/1o6LbT0NayfIzTtJpozAqtz50wrSNnKIJ/view?usp=sharing) \| [model_BaiduYun](https://pan.baidu.com/s/1fLqMa9r-Ea2wIT6I81bwhA) PW: tf0i
 
-[SWINTS-swin-ReCTS](https://github.com/mxin262/SwinTextSpotter/blob/main/projects/SWINTS/configs/SWINTS-swin-chn_finetune.yaml) [model_Google Drive](https://drive.google.com/file/d/1FLW35M18tw4fYSBL1qGzEOkTaD2t6mXT/view?usp=sharing) \| [model_BaiduYun](https://pan.baidu.com/s/1BHsLuwqUs_D_CO54UIaNPQ) PW: a4be
+[SWINTS-swin-ReCTS](https://github.com/mxin262/SwinTextSpotter/blob/main/projects/SWINTS/configs/SWINTS-swin-chn_finetune.yaml) \| [model_Google Drive](https://drive.google.com/file/d/1FLW35M18tw4fYSBL1qGzEOkTaD2t6mXT/view?usp=sharing) \| [model_BaiduYun](https://pan.baidu.com/s/1BHsLuwqUs_D_CO54UIaNPQ) PW: a4be
 
 #### Installation
 - Python=3.8
