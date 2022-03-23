@@ -7,6 +7,11 @@ This is the pytorch implementation of Paper: SwinTextSpotter: Scene Text Spottin
 
 - We use the models pre-trained on ImageNet. The ImageNet pre-trained [SwinTransformer](https://drive.google.com/drive/u/1/folders/19UaSgR4OwqA-BhCs_wG7i6E-OXC5NR__) backbone is obtained from [SwinT_detectron2](https://github.com/xiaohu2015/SwinT_detectron2).
 
+## Models
+[SWINTS-swin-Total-Text](https://github.com/mxin262/SwinTextSpotter/blob/main/projects/SWINTS/configs/SWINTS-swin-finetune-totaltext.yaml) [model_Google Drive](https://drive.google.com/file/d/1o6LbT0NayfIzTtJpozAqtz50wrSNnKIJ/view?usp=sharing) \| [model_BaiduYun](https://pan.baidu.com/s/1fLqMa9r-Ea2wIT6I81bwhA) PW: tf0i
+
+[SWINTS-swin-ReCTS](https://github.com/mxin262/SwinTextSpotter/blob/main/projects/SWINTS/configs/SWINTS-swin-chn_finetune.yaml) [model_Google Drive](https://drive.google.com/file/d/1FLW35M18tw4fYSBL1qGzEOkTaD2t6mXT/view?usp=sharing) \| [model_BaiduYun](https://pan.baidu.com/s/1BHsLuwqUs_D_CO54UIaNPQ) PW: a4be
+
 #### Installation
 - Python=3.8
 - PyTorch=1.8.0, torchvision=0.9.0, cudatoolkit=11.1
@@ -47,13 +52,23 @@ Downloaded images
   - Part2: 54,327 [[dataset]](https://universityofadelaide.box.com/s/e0owoic8xacralf4j5slpgu50xfjoirs)
 - ICDAR2015 [[image]](https://rrc.cvc.uab.es/?ch=4&com=downloads)
 - ICDAR2013 [[image]](https://rrc.cvc.uab.es/?ch=2&com=downloads)
-- Total-Text [[image]](https://drive.google.com/file/d/1bC68CzsSVTusZVvOkk7imSZSbgD1MqK2/view?usp=sharing)
+- Total-Text_train_images [[image]](https://drive.google.com/file/d/1idATPS2Uc0PAwTBcT2ndYNLse3yKtT6G/view?usp=sharing)
+- Total-Text_test_images [[image]](https://drive.google.com/file/d/1zd_Z5PwiUEEoO1Y0Sb5vQQmG1uNm5v1b/view?usp=sharing)
 - ReCTs [[images&label]](https://rrc.cvc.uab.es/?ch=12&com=downloads)
 - LSVT [[images&label]](https://drive.google.com/file/d/1E9RMFiRaRW4WdzA9Py7OimfzA82-Bwik/view?usp=sharing)(8.2G)
 - ArT [[images&label]](https://drive.google.com/file/d/1ss_3oYVYexSmhx7AP4cahl8Emd49Wrh8/view?usp=sharing)
 - SynChinese130k [[images&label]](https://drive.google.com/file/d/1w9BFDTfVgZvpLE003zM694E0we4OWmyP/view?usp=sharing)
 
 Downloaded label[[Google Drive]](https://drive.google.com/file/d/1wd_Z8UPNXRtnzU_qZCukKhxa_CDO5eaO/view?usp=sharing) [[BaiduYun]](https://pan.baidu.com/s/18GM7kwT-cuW01vDl4zutoQ) PW: a8gj
+
+
+To evaluate on Total Text, first download the test images and zipped annotations with
+
+```
+mkdir evaluation
+cd evaluation
+wget -O gt_totaltext.zip https://cloudstor.aarnet.edu.au/plus/s/SFHvin8BLUM4cNd/download
+```
 
 3. Pretrain SWINTS (e.g., with Swin-Transformer backbone)
 
