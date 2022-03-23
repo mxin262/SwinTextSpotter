@@ -73,29 +73,42 @@ wget -O gt_totaltext.zip https://cloudstor.aarnet.edu.au/plus/s/SFHvin8BLUM4cNd/
 3. Pretrain SWINTS (e.g., with Swin-Transformer backbone)
 
 ```
-python projects/SWINTS/train_net.py --num-gpus 8 --config-file projects/SWINTS/configs/SWINTS-swin-pretrain.yaml
+python projects/SWINTS/train_net.py \
+  --num-gpus 8 \
+  --config-file projects/SWINTS/configs/SWINTS-swin-pretrain.yaml
 ```
 
 4. Fine-tune model on the mixed real dataset
 
 ```
-python projects/SWINTS/train_net.py --num-gpus 8 --config-file projects/SWINTS/configs/SWINTS-swin-mixtrain.yaml
+python projects/SWINTS/train_net.py \
+  --num-gpus 8 \
+  --config-file projects/SWINTS/configs/SWINTS-swin-mixtrain.yaml
 ```
 
 5. Fine-tune model
 
 ```
-python projects/SWINTS/train_net.py --num-gpus 8 --config-file projects/SWINTS/configs/SWINTS-swin-finetune-totaltext.yaml
+python projects/SWINTS/train_net.py \
+  --num-gpus 8 \
+  --config-file projects/SWINTS/configs/SWINTS-swin-finetune-totaltext.yaml
 ```
 
 6. Evaluate SWINTS (e.g., with Swin-Transformer backbone)
 ```
-python projects/SWINTS/train_net.py --config-file projects/SWINTS/configs/SWINTS-swin-finetune-totaltext.yaml --eval-only MODEL.WEIGHTS ./output/model_final.pth
+python projects/SWINTS/train_net.py \
+  --config-file projects/SWINTS/configs/SWINTS-swin-finetune-totaltext.yaml \
+  --eval-only MODEL.WEIGHTS ./output/model_final.pth
 ```
 
 7. Visualize the detection and recognition results (e.g., with ResNet50 backbone)
 ```
-python demo/demo.py --config-file projects/SWINTS/configs/SWINTS-swin-finetune-totaltext.yaml --input input1.jpg --output ./output --confidence-threshold 0.4 --opts MODEL.WEIGHTS ./output/model_final.pth
+python demo/demo.py \
+  --config-file projects/SWINTS/configs/SWINTS-swin-finetune-totaltext.yaml \
+  --input input1.jpg \
+  --output ./output \
+  --confidence-threshold 0.4 \
+  --opts MODEL.WEIGHTS ./output/model_final.pth
 ```
 
 ### Example results:
