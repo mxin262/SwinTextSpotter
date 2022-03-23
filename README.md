@@ -62,7 +62,7 @@ Downloaded images
 Downloaded label[[Google Drive]](https://drive.google.com/file/d/1wd_Z8UPNXRtnzU_qZCukKhxa_CDO5eaO/view?usp=sharing) [[BaiduYun]](https://pan.baidu.com/s/18GM7kwT-cuW01vDl4zutoQ) PW: a8gj
 
 
-To evaluate on Total Text, first download the test images and zipped annotations with
+To evaluate on Total Text, first download the zipped annotations with
 
 ```
 mkdir evaluation
