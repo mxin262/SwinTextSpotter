@@ -66,7 +66,7 @@ class SWINTSDatasetMapper:
                     )
             ]
             self.rotate_gen = [
-                    T.RandomRotation(angle=[-0,0],sample_style="range")
+                    T.RandomRotation(angle=[-90,90],sample_style="range")
                     ]
         else:
             self.crop_gen = None
