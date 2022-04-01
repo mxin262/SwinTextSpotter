@@ -5,9 +5,11 @@
 
 This is the pytorch implementation of Paper: SwinTextSpotter: Scene Text Spotting via Better Synergy between Text Detection and Text Recognition (CVPR 2022). The paper is available at [this link](https://arxiv.org/pdf/2203.10209.pdf).
 
-- We use the models pre-trained on ImageNet. The ImageNet pre-trained [SwinTransformer](https://drive.google.com/drive/u/1/folders/19UaSgR4OwqA-BhCs_wG7i6E-OXC5NR__) backbone is obtained from [SwinT_detectron2](https://github.com/xiaohu2015/SwinT_detectron2).
+- We use the models pre-trained on ImageNet. The ImageNet pre-trained [SwinTransformer](https://drive.google.com/file/d/1wvzCMLJtEID8hBDu3wLpPv4xm3Es8ELC/view?usp=sharing) backbone is obtained from [SwinT_detectron2](https://github.com/xiaohu2015/SwinT_detectron2).
 
 ## Models
+[SWINTS-swin-english-pretrain [config]](https://github.com/mxin262/SwinTextSpotter/blob/main/projects/SWINTS/configs/SWINTS-swin-pretrain.yaml) \| [model_Google Drive](https://drive.google.com/file/d/1q3cNhJYPIZ8Sbk0-4i_gnQIF6z09rCKh/view?usp=sharing) \| [model_BaiduYun](https://pan.baidu.com/s/1INNghiHoI_K6m2t9YxVCIw) PW: 954t
+
 [SWINTS-swin-Total-Text [config]](https://github.com/mxin262/SwinTextSpotter/blob/main/projects/SWINTS/configs/SWINTS-swin-finetune-totaltext.yaml) \| [model_Google Drive](https://drive.google.com/file/d/1o6LbT0NayfIzTtJpozAqtz50wrSNnKIJ/view?usp=sharing) \| [model_BaiduYun](https://pan.baidu.com/s/1fLqMa9r-Ea2wIT6I81bwhA) PW: tf0i
 
 [SWINTS-swin-ReCTS [config]](https://github.com/mxin262/SwinTextSpotter/blob/main/projects/SWINTS/configs/SWINTS-swin-chn_finetune.yaml) \| [model_Google Drive](https://drive.google.com/file/d/1FLW35M18tw4fYSBL1qGzEOkTaD2t6mXT/view?usp=sharing) \| [model_BaiduYun](https://pan.baidu.com/s/1BHsLuwqUs_D_CO54UIaNPQ) PW: a4be
@@ -55,7 +57,7 @@ Downloaded images
 - ICDAR2015 [[image]](https://rrc.cvc.uab.es/?ch=4&com=downloads)
 - ICDAR2013 [[image]](https://rrc.cvc.uab.es/?ch=2&com=downloads)
 - Total-Text_train_images [[image]](https://drive.google.com/file/d/1idATPS2Uc0PAwTBcT2ndYNLse3yKtT6G/view?usp=sharing)
-- Total-Text_test_images [[image]](https://drive.google.com/file/d/1zd_Z5PwiUEEoO1Y0Sb5vQQmG1uNm5v1b/view?usp=sharing)
+- Total-Text_test_images [[image]](https://drive.google.com/file/d/1P1mHAZN82HqR-YFui-wOTdp3zBY2N_lJ/view?usp=sharing)
 - ReCTs [[images&label]](https://rrc.cvc.uab.es/?ch=12&com=downloads)
 - LSVT [[images&label]](https://drive.google.com/file/d/1E9RMFiRaRW4WdzA9Py7OimfzA82-Bwik/view?usp=sharing)(8.2G)
 - ArT [[images&label]](https://drive.google.com/file/d/1ss_3oYVYexSmhx7AP4cahl8Emd49Wrh8/view?usp=sharing)
