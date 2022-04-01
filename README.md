@@ -12,12 +12,14 @@ This is the pytorch implementation of Paper: SwinTextSpotter: Scene Text Spottin
 
 [SWINTS-swin-ReCTS [config]](https://github.com/mxin262/SwinTextSpotter/blob/main/projects/SWINTS/configs/SWINTS-swin-chn_finetune.yaml) \| [model_Google Drive](https://drive.google.com/file/d/1FLW35M18tw4fYSBL1qGzEOkTaD2t6mXT/view?usp=sharing) \| [model_BaiduYun](https://pan.baidu.com/s/1BHsLuwqUs_D_CO54UIaNPQ) PW: a4be
 
-#### Installation
+Configs and models for all other datasets are scheduled to release soon.
+
+## Installation
 - Python=3.8
 - PyTorch=1.8.0, torchvision=0.9.0, cudatoolkit=11.1
 - OpenCV for visualization
 
-#### Steps
+## Steps
 1. Install the repository (we recommend to use [Anaconda](https://www.anaconda.com/) for installation.)
 ```
 conda create -n SWINTS python=3.8 -y
@@ -62,6 +64,7 @@ Downloaded images
 Downloaded label[[Google Drive]](https://drive.google.com/file/d/1wd_Z8UPNXRtnzU_qZCukKhxa_CDO5eaO/view?usp=sharing) [[BaiduYun]](https://pan.baidu.com/s/18GM7kwT-cuW01vDl4zutoQ) PW: a8gj
 
 
+## Totaltext
 To evaluate on Total Text, first download the zipped annotations with
 
 ```
@@ -111,7 +114,7 @@ python demo/demo.py \
   --opts MODEL.WEIGHTS ./output/model_final.pth
 ```
 
-### Example results:
+## Example results:
 
 <img src="demo/results.png" width="100%">
 
