@@ -43,10 +43,10 @@ python setup.py build develop
 datasets
 |_ totaltext
 |  |_ train_images
-|  |_ annotations/train.json
+|  |_ totaltext_train.json
 |_ mlt2017
 |  |_ train_images
-|  |_ annotations/train.json
+|  |_ annotations/icdar_2017_mlt.json
 .......
 ```
 Downloaded images
@@ -70,6 +70,7 @@ Downloaded label[[Google Drive]](https://drive.google.com/file/d/1wd_Z8UPNXRtnzU
 To evaluate on Total Text, first download the zipped annotations with
 
 ```
+cd datasets
 mkdir evaluation
 cd evaluation
 wget -O gt_totaltext.zip https://cloudstor.aarnet.edu.au/plus/s/SFHvin8BLUM4cNd/download
