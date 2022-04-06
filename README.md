@@ -63,7 +63,7 @@ Downloaded images
 - ArT [[images&label]](https://drive.google.com/file/d/1ss_3oYVYexSmhx7AP4cahl8Emd49Wrh8/view?usp=sharing)
 - SynChinese130k [[images&label]](https://drive.google.com/file/d/1w9BFDTfVgZvpLE003zM694E0we4OWmyP/view?usp=sharing)
 
-Downloaded label[[Google Drive]](https://drive.google.com/file/d/1wd_Z8UPNXRtnzU_qZCukKhxa_CDO5eaO/view?usp=sharing) [[BaiduYun]](https://pan.baidu.com/s/18GM7kwT-cuW01vDl4zutoQ) PW: a8gj
+Downloaded label[[Google Drive]](https://drive.google.com/file/d/1wd_Z8UPNXRtnzU_qZCukKhxa_CDO5eaO/view?usp=sharing) [[BaiduYun]]( https://pan.baidu.com/s/1bFTlChn92GdOvcF4TfjjIw) PW: wpaf
 
 
 ## Totaltext
