@@ -1,0 +1,18 @@
+_BASE_: "Base-SWINTS_swin.yaml"
+MODEL:
+  WEIGHTS: ".output/mixtrain/model_0079999.pth"
+  SWINTS:
+    NUM_PROPOSALS: 300
+    NUM_CLASSES: 2
+DATASETS:
+  TRAIN: ("icdar2015_train",)
+  TEST:  ("icdar2015_test",)
+SOLVER:
+  STEPS: (6000,)
+  MAX_ITER: 10000
+  CHECKPOINT_PERIOD: 10000
+INPUT:
+  FORMAT: "RGB"
+
+TEST:
+  INFERENCE_TH_TEST: 0.05
