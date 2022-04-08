@@ -170,7 +170,10 @@ class DynamicHead(nn.Module):
                 gt_masks.append(targets[b]['gt_masks'][indices[b][1]])
                 proposal_boxes_pred.append(Boxes(bboxes[b][indices[b][0]]))
                 tmp_mask = mask_encoding.decoder(pred_mask[b]).view(-1,28,28)
-                masks_pred.append(tmp_mask[indices[b][0]])
+                tmp_mask = tmp_mask[indices[b][0]]
+                tmp_mask2 = torch.full_like(tmp_mask,0).cuda()
+                tmp_mask2[tmp_mask>0.4]=1
+                masks_pred.append(tmp_mask2)
             else:
                 # post_processing
                 num_proposals = self.cfg.MODEL.SWINTS.TEST_NUM_PROPOSALS
