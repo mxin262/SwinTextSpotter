@@ -68,7 +68,7 @@ Downloaded images
 Downloaded label[[Google Drive]](https://drive.google.com/file/d/1wd_Z8UPNXRtnzU_qZCukKhxa_CDO5eaO/view?usp=sharing) [[BaiduYun]]( https://pan.baidu.com/s/1bFTlChn92GdOvcF4TfjjIw) PW: wpaf
 
 You can also prepare your custom dataset following the example scripts.
-[[example scripts]](https://drive.google.com/file/d/1XgI6sZAlnrNCB24Rm3OW_FULp2RhsKUs/view?usp=sharing)
+[[example scripts]](https://drive.google.com/file/d/1FE17GXyGPhDk5XI3EpbXwlOv1S8txOx2/view?usp=sharing)
 
 ## Totaltext
 To evaluate on Total Text, first download the zipped annotations with
