@@ -78,6 +78,9 @@ cd evaluation
 wget -O gt_totaltext.zip https://cloudstor.aarnet.edu.au/plus/s/SFHvin8BLUM4cNd/download
 ```
 
+You can also prepare your custom dataset following the example scripts.
+[[example scripts]](https://drive.google.com/file/d/1EFGEuqpJZOfuiIWTNbt_v2hMVUXRZ9dQ/view?usp=sharing)
+
 3. Pretrain SWINTS (e.g., with Swin-Transformer backbone)
 
 ```
