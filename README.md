@@ -67,6 +67,8 @@ Downloaded images
 
 Downloaded label[[Google Drive]](https://drive.google.com/file/d/1wd_Z8UPNXRtnzU_qZCukKhxa_CDO5eaO/view?usp=sharing) [[BaiduYun]]( https://pan.baidu.com/s/1bFTlChn92GdOvcF4TfjjIw) PW: wpaf
 
+You can also prepare your custom dataset following the example scripts.
+[[example scripts]](https://drive.google.com/file/d/1EFGEuqpJZOfuiIWTNbt_v2hMVUXRZ9dQ/view?usp=sharing)
 
 ## Totaltext
 To evaluate on Total Text, first download the zipped annotations with
@@ -77,9 +79,6 @@ mkdir evaluation
 cd evaluation
 wget -O gt_totaltext.zip https://cloudstor.aarnet.edu.au/plus/s/SFHvin8BLUM4cNd/download
 ```
-
-You can also prepare your custom dataset following the example scripts.
-[[example scripts]](https://drive.google.com/file/d/1EFGEuqpJZOfuiIWTNbt_v2hMVUXRZ9dQ/view?usp=sharing)
 
 3. Pretrain SWINTS (e.g., with Swin-Transformer backbone)
 
