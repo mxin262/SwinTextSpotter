@@ -25,7 +25,7 @@ def check_all_done(seqs):
     return True
 
 def num2char(num):
-    chars = [' ','!','"','#','$','%','&','\'','(',')','*','+',',','-','.','/','0','1','2','3','4','5','6','7','8','9',':',';','<','=','>','?','@','A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z','[','\\',']','^','_','`','a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z','{','|','}','~']
+    CTLABELS = [' ','!','"','#','$','%','&','\'','(',')','*','+',',','-','.','/','0','1','2','3','4','5','6','7','8','9',':',';','<','=','>','?','@','A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z','[','\\',']','^','_','`','a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z','{','|','}','~','´', "~", "ˋ", "ˊ","﹒", "ˀ", "˜", "ˇ", "ˆ", "˒","‑"]
     char = chars[num]
     return char
 
@@ -38,7 +38,7 @@ class SequencePredictor(nn.Module):
             nn.ReLU(inplace=True),
             nn.MaxPool2d(2, stride=2, ceil_mode=True),
         )
-        self.MAX_LENGTH = 25
+        self.MAX_LENGTH = 100
         RESIZE_WIDTH = cfg.MODEL.REC_HEAD.RESOLUTION[1]
         RESIZE_HEIGHT = cfg.MODEL.REC_HEAD.RESOLUTION[0]
         self.RESIZE_WIDTH = RESIZE_WIDTH
@@ -68,7 +68,7 @@ class SequencePredictor(nn.Module):
                 nn.init.kaiming_normal_(param, mode="fan_out", nonlinearity="relu")
 
     def forward(
-        self, x, targets=None, use_beam_search=False
+        self, x, decoder_targets=None, word_targets=None, use_beam_search=False
     ):
         rescale_out = self.rescale(x)
         seq_decoder_input = self.seq_encoder(rescale_out)
@@ -100,13 +100,6 @@ class SequencePredictor(nn.Module):
             .transpose(1, 2)
         )
         if self.training:
-            word_target = -torch.full_like(targets, 1, device=gpu_device)
-            decoder_target = torch.full_like(targets, self.num_class-1, device=gpu_device)
-            for i in range(targets.shape[0]):
-                word_target[i][:len(torch.where(targets[i]!=0)[0])] = targets[i][targets[i]!=0]
-                decoder_target[i][:len(torch.where(targets[i]!=0)[0])] = targets[i][targets[i]!=0]
-                end_point = min(max(1, len(torch.where(targets[i]!=0)[0])), decoder_target.size(1)-1)
-                word_target[i][end_point] = self.num_class-1
             bos_onehot = np.zeros(
                 (seq_decoder_input_reshape.size(1), 1), dtype=np.int32
             )
@@ -120,7 +113,7 @@ class SequencePredictor(nn.Module):
                 if random.random() < 1
                 else False
             )
-            target_length = decoder_target.size(1)
+            target_length = decoder_targets.size(1)
             if use_teacher_forcing:
                 # Teacher forcing: Feed the target as the next input
                 for di in range(target_length):
@@ -129,13 +122,13 @@ class SequencePredictor(nn.Module):
                     )
                     if di == 0:
                         loss_seq_decoder = self.criterion_seq_decoder(
-                            decoder_output, word_target[:, di]
+                            decoder_output, word_targets[:, di]
                         )
                     else:
                         loss_seq_decoder += self.criterion_seq_decoder(
-                            decoder_output, word_target[:, di]
+                            decoder_output, word_targets[:, di]
                         )
-                    decoder_input = decoder_target[:, di]  # Teacher forcing
+                    decoder_input = decoder_targets[:, di]  # Teacher forcing
             else:
                 # Without teacher forcing: use its own predictions as the next input
                 for di in range(target_length):
@@ -148,11 +141,11 @@ class SequencePredictor(nn.Module):
                     ).detach()  # detach from history as input
                     if di == 0:
                         loss_seq_decoder = self.criterion_seq_decoder(
-                            decoder_output, word_target[:, di]
+                            decoder_output, word_targets[:, di]
                         )
                     else:
                         loss_seq_decoder += self.criterion_seq_decoder(
-                            decoder_output, word_target[:, di]
+                            decoder_output, word_targets[:, di]
                         )
             loss_seq_decoder = loss_seq_decoder.sum() / loss_seq_decoder.size(0)
             loss_seq_decoder = 0.2 * loss_seq_decoder
@@ -161,7 +154,6 @@ class SequencePredictor(nn.Module):
             words = []
             decoded_scores = []
             detailed_decoded_scores = []
-            # hidden_dims = []
             # real_length = 0
             if use_beam_search:
                 for batch_index in range(seq_decoder_input_reshape.size(1)):
@@ -201,7 +193,6 @@ class SequencePredictor(nn.Module):
                     decoder_hidden = torch.zeros((1, 256), device=gpu_device)
                     word = []
                     char_scores = []
-                    hidden_dim = []
                     for di in range(self.MAX_LENGTH):
                         decoder_output, decoder_hidden, decoder_attention = self.seq_decoder(
                             decoder_input,
@@ -210,6 +201,7 @@ class SequencePredictor(nn.Module):
                                 :, batch_index : batch_index + 1, :
                             ],
                         )
+                        # decoder_attentions[di] = decoder_attention.data
                         topv, topi = decoder_output.data.topk(1)
                         char_scores.append(topv.item())
                         if topi.item() == 0:
@@ -220,7 +212,7 @@ class SequencePredictor(nn.Module):
                             else:
                                 word.append(topi.item())
 
-
+                        # real_length = di
                         decoder_input = topi.squeeze(1).detach()
                     tmp = np.zeros((self.MAX_LENGTH), dtype=np.int32)
                     tmp[:len(word)] = torch.tensor(word)
