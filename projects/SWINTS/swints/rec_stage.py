@@ -181,7 +181,7 @@ class REC_STAGE(nn.Module):
         k_rec = k_rec.permute(0,2,1).view(n,c,self.feat_size[0],self.feat_size[1])
         gt_masks = self.rescale(gt_masks.unsqueeze(1))
         k_rec = k_rec*gt_masks
-        attn_vecs = self.seq_decoder(k_rec, targets)
+        attn_vecs = self.seq_decoder(k_rec, targets, targets)
         return attn_vecs
 
 def encoder_layer(in_c, out_c, k=3, s=2, p=1):
