@@ -44,7 +44,7 @@ class TextEvaluator(DatasetEvaluator):
                 f"json_file was not found in MetaDataCatalog for '{dataset_name}'."
             )
         
-        CTLABELS = [' ','!','"','#','$','%','&','\'','(',')','*','+',',','-','.','/','0','1','2','3','4','5','6','7','8','9',':',';','<','=','>','?','@','A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z','[','\\',']','^','_','`','a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z','{','|','}','~','´', "~", "ˋ", "ˊ","﹒", "ˀ", "˜", "ˇ", "ˆ", "˒","‑"]
+        CTLABELS = [" ","!",'"',"#","$","%","&","'","(",")","*","+",",","-",".","/","0","1","2","3","4","5","6","7","8","9",":",";","<","=",">","?","@","A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z","[","\\","]","^","_","`","a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z","{","|","}","~","ˋ","ˊ","﹒","ˀ","˜","ˇ","ˆ","˒","‑",'´', "~"]
 
         json_file = PathManager.get_local_path(self._metadata.json_file)
         with contextlib.redirect_stdout(io.StringIO()):
@@ -65,6 +65,10 @@ class TextEvaluator(DatasetEvaluator):
             self._text_eval_gt_path = "datasets/evaluation/gt_icdar2015.zip"
             self._word_spotting = False
             self.dataset_name = "icdar2015"
+        elif "vintext" in dataset_name:
+            self.lexicon_type = None
+            self._text_eval_gt_path = "datasets/evaluation/gt_vintext.zip"
+            self._word_spotting = True
         elif "custom" in dataset_name:
             self._text_eval_gt_path = "datasets/evaluation/gt_custom.zip"
             self._word_spotting = False
@@ -105,7 +109,10 @@ class TextEvaluator(DatasetEvaluator):
                         ymax = 0
                         for i in range(len(data[ix]['polys'])):
                             outstr = outstr + str(int(data[ix]['polys'][i][0])) +','+str(int(data[ix]['polys'][i][1])) +','
-                        ass = de_ascii(data[ix]['rec'])
+                        if not "vintext" in self.dataset_name:
+                            ass = de_ascii(data[ix]['rec'])
+                        else:
+                            ass = data[ix]['rec']
                         if len(ass)>=0: # 
                             outstr = outstr + str(round(data[ix]['score'], 3)) +',####'+ass+'\n'	
                             f2.writelines(outstr)
@@ -313,7 +320,6 @@ class TextEvaluator(DatasetEvaluator):
             zipf_full.close()
             os.chdir("../")
             # clean temp files
-
             shutil.rmtree(origin_file)
             shutil.rmtree(output_file)
             shutil.rmtree(output_file_full)
@@ -356,9 +362,10 @@ class TextEvaluator(DatasetEvaluator):
         result_path, result_path_full = self.sort_detection(temp_dir)
         text_result = self.evaluate_with_official_code(result_path, self._text_eval_gt_path) # None 
         text_result["e2e_method"] = "None-" + text_result["e2e_method"]
-        dict_lexicon = {"1": "Generic", "2": "Weak", "3": "Strong"}
-        text_result_full = self.evaluate_with_official_code(result_path_full, self._text_eval_gt_path) # with lexicon
-        text_result_full["e2e_method"] = dict_lexicon[str(self.lexicon_type)] + "-" + text_result_full["e2e_method"]
+        if not self.lexicon_type == None:
+            dict_lexicon = {"1": "Generic", "2": "Weak", "3": "Strong"}
+            text_result_full = self.evaluate_with_official_code(result_path_full, self._text_eval_gt_path) # with lexicon
+            text_result_full["e2e_method"] = dict_lexicon[str(self.lexicon_type)] + "-" + text_result_full["e2e_method"]
         os.remove(result_path)
         os.remove(result_path_full)
         # parse
@@ -369,9 +376,10 @@ class TextEvaluator(DatasetEvaluator):
         result = text_result["e2e_method"]
         groups = re.match(template, result).groups()
         self._results[groups[0]] = {groups[i*2+1]: float(groups[(i+1)*2]) for i in range(3)}
-        result = text_result_full["e2e_method"]
-        groups = re.match(template, result).groups()
-        self._results[groups[0]] = {groups[i*2+1]: float(groups[(i+1)*2]) for i in range(3)}
+        if not self.lexicon_type == None:
+            result = text_result_full["e2e_method"]
+            groups = re.match(template, result).groups()
+            self._results[groups[0]] = {groups[i*2+1]: float(groups[(i+1)*2]) for i in range(3)}
 
         return copy.deepcopy(self._results)
 
@@ -425,18 +433,20 @@ class TextEvaluator(DatasetEvaluator):
         return results
   
     def decode(self, rec):
-        # CTLABELS = "_0123456789abcdefghijklmnopqrstuvwxyz"
-        CTLABELS = [' ','!','"','#','$','%','&','\'','(',')','*','+',',','-','.','/','0','1','2','3','4','5','6','7','8','9',':',';','<','=','>','?','@','A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z','[','\\',']','^','_','`','a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z','{','|','}','~',"ˋ","ˊ","﹒","ˀ","˜","ˇ","ˆ","˒","‑",]
-        # ctc decoding
+        CTLABELS = [" ","!",'"',"#","$","%","&","'","(",")","*","+",",","-",".","/","0","1","2","3","4","5","6","7","8","9",":",";","<","=",">","?","@","A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z","[","\\","]","^","_","`","a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z","{","|","}","~","ˋ","ˊ","﹒","ˀ","˜","ˇ","ˆ","˒","‑",'´', "~"]
         s = ''
         for c in rec:
             c = int(c)
             if 0<c < len(CTLABELS):
-                if not "ctw1500" in self.dataset_name:
+                if not "ctw1500" in self.dataset_name and not "vintext" in self.dataset_name:
                     if CTLABELS[c-1] in "_0123456789abcdefghijklmnopqrstuvwxyz":
                         s += CTLABELS[c-1]
+                else:
+                    s += CTLABELS[c-1]
             else:
                 s += u''
+        if "vintext" in self.dataset_name:
+            s = vintext_decoder(s)
         return s
 
     def py_cpu_pnms(self, dets, scores, thresh):
@@ -606,3 +616,59 @@ class GenericMask:
         bbox[2] += bbox[0]
         bbox[3] += bbox[1]
         return bbox
+
+dictionary = "aàáạảãâầấậẩẫăằắặẳẵAÀÁẠẢÃĂẰẮẶẲẴÂẦẤẬẨẪeèéẹẻẽêềếệểễEÈÉẸẺẼÊỀẾỆỂỄoòóọỏõôồốộổỗơờớợởỡOÒÓỌỎÕÔỒỐỘỔỖƠỜỚỢỞỠiìíịỉĩIÌÍỊỈĨuùúụủũưừứựửữƯỪỨỰỬỮUÙÚỤỦŨyỳýỵỷỹYỲÝỴỶỸ"
+
+
+def make_groups():
+    groups = []
+    i = 0
+    while i < len(dictionary) - 5:
+        group = [c for c in dictionary[i : i + 6]]
+        i += 6
+        groups.append(group)
+    return groups
+
+
+groups = make_groups()
+
+TONES = ["", "ˋ", "ˊ", "﹒", "ˀ", "˜"]
+SOURCES = ["ă", "â", "Ă", "Â", "ê", "Ê", "ô", "ơ", "Ô", "Ơ", "ư", "Ư", "Đ", "đ"]
+TARGETS = ["aˇ", "aˆ", "Aˇ", "Aˆ", "eˆ", "Eˆ", "oˆ", "o˒", "Oˆ", "O˒", "u˒", "U˒", "D-", "d‑"]
+
+
+def correct_tone_position(word):
+    word = word[:-1]
+    if len(word) < 2:
+        pass
+    first_ord_char = ""
+    second_order_char = ""
+    for char in word:
+        for group in groups:
+            if char in group:
+                second_order_char = first_ord_char
+                first_ord_char = group[0]
+    if word[-1] == first_ord_char and second_order_char != "":
+        pair_chars = ["qu", "Qu", "qU", "QU", "gi", "Gi", "gI", "GI"]
+        for pair in pair_chars:
+            if pair in word and second_order_char in ["u", "U", "i", "I"]:
+                return first_ord_char
+        return second_order_char
+    return first_ord_char
+
+
+def vintext_decoder(recognition):
+    for char in TARGETS:
+        recognition = recognition.replace(char, SOURCES[TARGETS.index(char)])
+    if len(recognition) < 1:
+        return recognition
+    if recognition[-1] in TONES:
+        if len(recognition) < 2:
+            return recognition
+        replace_char = correct_tone_position(recognition)
+        tone = recognition[-1]
+        recognition = recognition[:-1]
+        for group in groups:
+            if replace_char in group:
+                recognition = recognition.replace(replace_char, group[TONES.index(tone)])
+    return recognition
