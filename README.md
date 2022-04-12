@@ -20,8 +20,6 @@ This is the pytorch implementation of Paper: SwinTextSpotter: Scene Text Spottin
 
 [SWINTS-swin-vintext [config]](https://github.com/mxin262/SwinTextSpotter/blob/main/projects/SWINTS/configs/SWINTS-swin-finetune-vintext.yaml) \| [model_Google Drive](https://drive.google.com/file/d/1IfyPrYFnQOWoY8pPg-GIN5ofuALU15yD/view?usp=sharing) \| [model_BaiduYun](https://pan.baidu.com/s/1c5Xc9_lCun6mazhuxBk7sA) PW: slmp
 
-Configs and models for all other datasets are scheduled to release soon.
-
 ## Installation
 - Python=3.8
 - PyTorch=1.8.0, torchvision=0.9.0, cudatoolkit=11.1
