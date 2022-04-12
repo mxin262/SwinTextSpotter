@@ -12,9 +12,13 @@ This is the pytorch implementation of Paper: SwinTextSpotter: Scene Text Spottin
 
 [SWINTS-swin-Total-Text [config]](https://github.com/mxin262/SwinTextSpotter/blob/main/projects/SWINTS/configs/SWINTS-swin-finetune-totaltext.yaml) \| [model_Google Drive](https://drive.google.com/file/d/1o6LbT0NayfIzTtJpozAqtz50wrSNnKIJ/view?usp=sharing) \| [model_BaiduYun](https://pan.baidu.com/s/1fLqMa9r-Ea2wIT6I81bwhA) PW: tf0i
 
+[SWINTS-swin-ctw [config]](https://github.com/mxin262/SwinTextSpotter/blob/main/projects/SWINTS/configs/SWINTS-swin-finetune-ctw.yaml) \| [model_Google Drive](https://drive.google.com/file/d/1LC7-JFuQIIYeUt_KaDH61ICGvVkRqkz7/view?usp=sharing) \| [model_BaiduYun](https://pan.baidu.com/s/1q7zZQ1Hnl6QPmwfJXal98Q) PW: 4etq
+
 [SWINTS-swin-icdar2015 [config]](https://github.com/mxin262/SwinTextSpotter/blob/main/projects/SWINTS/configs/SWINTS-swin-finetune-ic15.yaml) \| [model_Google Drive](https://drive.google.com/file/d/15lDht7RtN092DeGggN5qoEyTTUkmIuGs/view?usp=sharing) \| [model_BaiduYun](https://pan.baidu.com/s/1bWTwmIrZOUNqEUqx5cKXng) PW: 3n82
 
 [SWINTS-swin-ReCTS [config]](https://github.com/mxin262/SwinTextSpotter/blob/main/projects/SWINTS/configs/SWINTS-swin-chn_finetune.yaml) \| [model_Google Drive](https://drive.google.com/file/d/1FLW35M18tw4fYSBL1qGzEOkTaD2t6mXT/view?usp=sharing) \| [model_BaiduYun](https://pan.baidu.com/s/1BHsLuwqUs_D_CO54UIaNPQ) PW: a4be
+
+[SWINTS-swin-vintext [config]](https://github.com/mxin262/SwinTextSpotter/blob/main/projects/SWINTS/configs/SWINTS-swin-finetune-vintext.yaml) \| [model_Google Drive](https://drive.google.com/file/d/1IfyPrYFnQOWoY8pPg-GIN5ofuALU15yD/view?usp=sharing) \| [model_BaiduYun](https://pan.baidu.com/s/1c5Xc9_lCun6mazhuxBk7sA) PW: slmp
 
 Configs and models for all other datasets are scheduled to release soon.
 
