@@ -128,7 +128,7 @@ python demo/demo.py \
 <img src="demo/results.png" width="100%">
 
 ## Acknowlegement
-Part of the codes are built on top of [Detectron2](https://github.com/facebookresearch/detectron2), [ISTR](https://github.com/hujiecpp/ISTR), [SwinT_detectron2](https://github.com/xiaohu2015/SwinT_detectron2), [Focal-Transformer](https://github.com/microsoft/Focal-Transformer) and [MaskTextSpotterV3](https://github.com/MhLiao/MaskTextSpotterV3).
+[Adelaidet](https://github.com/aim-uofa/AdelaiDet), [Detectron2](https://github.com/facebookresearch/detectron2), [ISTR](https://github.com/hujiecpp/ISTR), [SwinT_detectron2](https://github.com/xiaohu2015/SwinT_detectron2), [Focal-Transformer](https://github.com/microsoft/Focal-Transformer) and [MaskTextSpotterV3](https://github.com/MhLiao/MaskTextSpotterV3).
 
 ## Citation
 
