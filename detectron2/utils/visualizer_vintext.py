@@ -1073,7 +1073,7 @@ class Visualizer:
         color = 'w'
         # font_size = 7.0
         x, y = position
-        font_path = "/media/jingroup/e694bdda-b2a9-4fc1-97dd-1cf7547cab1e/下载/VNFREE.TTF"
+        font_path = "VNFREE.TTF"
         prop = mfm.FontProperties(fname=font_path)
         self.output.ax.text(
             x,
