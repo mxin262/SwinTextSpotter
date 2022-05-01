@@ -47,7 +47,10 @@ python setup.py build develop
 datasets
 |_ totaltext
 |  |_ train_images
+|  |_ test_images
 |  |_ totaltext_train.json
+|  |_ weak_voc_new.txt
+|  |_ weak_voc_pair_list.txt
 |_ mlt2017
 |  |_ train_images
 |  |_ annotations/icdar_2017_mlt.json
@@ -66,20 +69,26 @@ Downloaded images
 - LSVT [[images&label]](https://pan.baidu.com/s/1j-zlH8SfmdTtH2OnuT9B7Q) PW: 9uh1
 - ArT [[images&label]](https://pan.baidu.com/s/165RtrJVIsJ3QqDjesoX1jQ) PW: 2865
 - SynChinese130k [[images]](https://drive.google.com/file/d/1w9BFDTfVgZvpLE003zM694E0we4OWmyP/view?usp=sharing)[[label]](https://drive.google.com/file/d/199sLThD_1e0vtDmpWrAEtUJyleS8DDTv/view?usp=sharing)
+- Vintext_images [[image]](https://drive.google.com/file/d/1O8t84JtlQZE9ev4dgHrK3TLfbzRu2z9E/view?usp=sharing)
 
 Downloaded label[[Google Drive]](https://drive.google.com/file/d/1wd_Z8UPNXRtnzU_qZCukKhxa_CDO5eaO/view?usp=sharing) [[BaiduYun]]( https://pan.baidu.com/s/1bFTlChn92GdOvcF4TfjjIw) PW: wpaf
+
+Downloader lexicion[[Google Drive]](https://drive.google.com/file/d/1jNX0NQKtyMC1pnh_IV__0drgNwTnupca/view?usp=sharing) and place it to corresponding dataset.
 
 You can also prepare your custom dataset following the example scripts.
 [[example scripts]](https://drive.google.com/file/d/1FE17GXyGPhDk5XI3EpbXwlOv1S8txOx2/view?usp=sharing)
 
 ## Totaltext
-To evaluate on Total Text, first download the zipped annotations with
+To evaluate on Total Text, CTW1500, ICDAR2015, first download the zipped annotations with
 
 ```
 cd datasets
 mkdir evaluation
 cd evaluation
+wget -O gt_ctw1500.zip https://cloudstor.aarnet.edu.au/plus/s/xU3yeM3GnidiSTr/download
 wget -O gt_totaltext.zip https://cloudstor.aarnet.edu.au/plus/s/SFHvin8BLUM4cNd/download
+wget -O gt_icdar2015.zip https://drive.google.com/file/d/1wrq_-qIyb_8dhYVlDzLZTTajQzbic82Z/view?usp=sharing
+wget -O gt_vintext.zip https://drive.google.com/file/d/11lNH0uKfWJ7Wc74PGshWCOgSxgEnUPEV/view?usp=sharing
 ```
 
 3. Pretrain SWINTS (e.g., with Swin-Transformer backbone)
