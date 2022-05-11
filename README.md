@@ -71,7 +71,7 @@ Downloaded images
 - SynChinese130k [[images]](https://drive.google.com/file/d/1w9BFDTfVgZvpLE003zM694E0we4OWmyP/view?usp=sharing)[[label]](https://drive.google.com/file/d/199sLThD_1e0vtDmpWrAEtUJyleS8DDTv/view?usp=sharing)
 - Vintext_images [[image]](https://drive.google.com/file/d/1O8t84JtlQZE9ev4dgHrK3TLfbzRu2z9E/view?usp=sharing)
 
-Downloaded label[[Google Drive]](https://drive.google.com/file/d/1wd_Z8UPNXRtnzU_qZCukKhxa_CDO5eaO/view?usp=sharing) [[BaiduYun]]( https://pan.baidu.com/s/1bFTlChn92GdOvcF4TfjjIw) PW: wpaf
+Downloaded label[[Google Drive]](https://drive.google.com/file/d/1Yx3GRRUogjYYDUrprexGnPerFX3H6r_3/view?usp=sharing) [[BaiduYun]](https://pan.baidu.com/s/14N4waNQG2D0UpAJkjc4qQQ) PW: 46vd
 
 Downloader lexicion[[Google Drive]](https://drive.google.com/file/d/1jNX0NQKtyMC1pnh_IV__0drgNwTnupca/view?usp=sharing) and place it to corresponding dataset.
 
