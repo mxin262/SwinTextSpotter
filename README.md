@@ -64,7 +64,7 @@ Downloaded images
 - ICDAR2015 [[image]](https://rrc.cvc.uab.es/?ch=4&com=downloads)
 - ICDAR2013 [[image]](https://rrc.cvc.uab.es/?ch=2&com=downloads)
 - Total-Text_train_images [[image]](https://drive.google.com/file/d/1idATPS2Uc0PAwTBcT2ndYNLse3yKtT6G/view?usp=sharing)
-- Total-Text_test_images [[image]](https://drive.google.com/file/d/1P1mHAZN82HqR-YFui-wOTdp3zBY2N_lJ/view?usp=sharing)
+- Total-Text_test_images [[image]](https://drive.google.com/file/d/1zd_Z5PwiUEEoO1Y0Sb5vQQmG1uNm5v1b/view?usp=sharing)
 - ReCTs [[images&label]](https://pan.baidu.com/s/1JC0_rNbsyz564YakptP6Ow) PW: 2b4q
 - LSVT [[images&label]](https://pan.baidu.com/s/1j-zlH8SfmdTtH2OnuT9B7Q) PW: 9uh1
 - ArT [[images&label]](https://pan.baidu.com/s/165RtrJVIsJ3QqDjesoX1jQ) PW: 2865
