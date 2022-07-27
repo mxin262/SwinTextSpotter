@@ -59,7 +59,7 @@ _PREDEFINED_SPLITS_COCO["coco"] = {
     "chn_syn": ("chn_syn_images", "annotations/chn_syn.json"),
     "totaltext_train": ("totaltext/totaltext_train_images", "totaltext/totaltext_train.json"),
     "totaltext_test": ("totaltext/totaltext_test_images", "totaltext/totaltext_test.json"),
-    "ctw1500_train": ("train2017", "annotations/instances_train2017.json"),
+    "ctw1500_train": ("ctwtrain_text_image", "annotations/traint_ctw1500_maxlen100_v2.json"),
     "ctw1500_test": ("ctwtest_text_image", "annotations/test_ctw1500_maxlen100.json"),
 }  
 
