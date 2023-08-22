@@ -7,6 +7,11 @@ This is the pytorch implementation of Paper: SwinTextSpotter: Scene Text Spottin
 
 - We use the models pre-trained on ImageNet. The ImageNet pre-trained [SwinTransformer](https://drive.google.com/file/d/1wvzCMLJtEID8hBDu3wLpPv4xm3Es8ELC/view?usp=sharing) backbone is obtained from [SwinT_detectron2](https://github.com/xiaohu2015/SwinT_detectron2).
 
+## News
+
+`2023.08.22` We release a strong text spotting model [ESTextSpotter](https://arxiv.org/pdf/2308.10147.pdf) that achieves explicit
+synergy on text spotting tasks.
+
 ## Models
 [SWINTS-swin-english-pretrain [config]](https://github.com/mxin262/SwinTextSpotter/blob/main/projects/SWINTS/configs/SWINTS-swin-pretrain.yaml) \| [model_Google Drive](https://drive.google.com/file/d/1q3cNhJYPIZ8Sbk0-4i_gnQIF6z09rCKh/view?usp=sharing) \| [model_BaiduYun](https://pan.baidu.com/s/1INNghiHoI_K6m2t9YxVCIw) PW: 954t
 
