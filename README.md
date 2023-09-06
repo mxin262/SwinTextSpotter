@@ -10,7 +10,7 @@ This is the pytorch implementation of Paper: SwinTextSpotter: Scene Text Spottin
 ## News
 
 `2023.08.22` We release a strong text spotting model [ESTextSpotter](https://arxiv.org/pdf/2308.10147.pdf) that achieves explicit
-synergy on text spotting tasks.
+synergy on text spotting tasks. [Code](https://github.com/mxin262/ESTextSpotter)
 
 ## Models
 [SWINTS-swin-english-pretrain [config]](https://github.com/mxin262/SwinTextSpotter/blob/main/projects/SWINTS/configs/SWINTS-swin-pretrain.yaml) \| [model_Google Drive](https://drive.google.com/file/d/1q3cNhJYPIZ8Sbk0-4i_gnQIF6z09rCKh/view?usp=sharing) \| [model_BaiduYun](https://pan.baidu.com/s/1INNghiHoI_K6m2t9YxVCIw) PW: 954t
