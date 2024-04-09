@@ -8,6 +8,7 @@ This is the pytorch implementation of Paper: SwinTextSpotter: Scene Text Spottin
 - We use the models pre-trained on ImageNet. The ImageNet pre-trained [SwinTransformer](https://drive.google.com/file/d/1wvzCMLJtEID8hBDu3wLpPv4xm3Es8ELC/view?usp=sharing) backbone is obtained from [SwinT_detectron2](https://github.com/xiaohu2015/SwinT_detectron2).
 
 ## News
+`2024.04.09` We release a new text spotting pipeline [Bridge Text Spotting](https://arxiv.org/pdf/2404.04624.pdf) that combines the advantages of end-to-end and two-step text spotting. [Code](https://github.com/mxin262/Bridging-Text-Spotting)
 
 `2023.08.22` We release a strong text spotting model [ESTextSpotter](https://arxiv.org/pdf/2308.10147.pdf) that achieves explicit
 synergy on text spotting tasks. [Code](https://github.com/mxin262/ESTextSpotter)
@@ -44,6 +45,9 @@ pip install timm
 pip install Polygon3
 git clone https://github.com/mxin262/SwinTextSpotter.git
 cd SwinTextSpotter
+cd detectron2
+python setup.py build develop
+cd ..
 python setup.py build develop
 ```
 
