@@ -45,9 +45,6 @@ pip install timm
 pip install Polygon3
 git clone https://github.com/mxin262/SwinTextSpotter.git
 cd SwinTextSpotter
-cd detectron2
-python setup.py build develop
-cd ..
 python setup.py build develop
 ```
 
