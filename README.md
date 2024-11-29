@@ -85,17 +85,8 @@ You can also prepare your custom dataset following the example scripts.
 [[example scripts]](https://drive.google.com/file/d/1FE17GXyGPhDk5XI3EpbXwlOv1S8txOx2/view?usp=sharing)
 
 ## Totaltext
-To evaluate on Total Text, CTW1500, ICDAR2015, first download the zipped annotations with
+To evaluate on Total Text, CTW1500, ICDAR2015, first download the zipped [annotations](https://1drv.ms/u/c/50d06548d4272c91/EZEsJ9RIZdAggFB6AAAAAAABPi2VUFAMwBxLLPnzDJdquQ?e=HXp7Pa) and unzip it
 
-```
-cd datasets
-mkdir evaluation
-cd evaluation
-wget -O gt_ctw1500.zip https://cloudstor.aarnet.edu.au/plus/s/xU3yeM3GnidiSTr/download
-wget -O gt_totaltext.zip https://cloudstor.aarnet.edu.au/plus/s/SFHvin8BLUM4cNd/download
-wget -O gt_icdar2015.zip https://drive.google.com/file/d/1wrq_-qIyb_8dhYVlDzLZTTajQzbic82Z/view?usp=sharing
-wget -O gt_vintext.zip https://drive.google.com/file/d/11lNH0uKfWJ7Wc74PGshWCOgSxgEnUPEV/view?usp=sharing
-```
 
 3. Pretrain SWINTS (e.g., with Swin-Transformer backbone)
 
